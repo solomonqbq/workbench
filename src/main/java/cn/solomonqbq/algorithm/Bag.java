@@ -36,7 +36,7 @@ public class Bag {
         System.out.println("总价值:"+sum);
     }
 
-    class Item {
+    final static class Item {
         int weight;
         int value;
         int status;//0:未装、1:已装、2:超重
@@ -60,7 +60,7 @@ public class Bag {
         int pickItem(List<Item> items, int capacity);
     }
 
-    class MostValueStrategy implements Strategy {
+    final static class MostValueStrategy implements Strategy {
 
         public int pickItem(List<Item> items, int capacity) {
             int index = -1;
@@ -86,7 +86,7 @@ public class Bag {
         }
     }
 
-    class LightestStrategy implements Strategy {
+    final static class LightestStrategy implements Strategy {
 
         public int pickItem(List<Item> items, int capacity) {
             int index = -1;
@@ -112,7 +112,7 @@ public class Bag {
         }
     }
 
-    class MostUnitValueStrategy implements Strategy {
+    final static class MostUnitValueStrategy implements Strategy {
 
         public int pickItem(List<Item> items, int capacity) {
             int index = -1;
