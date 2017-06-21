@@ -66,19 +66,12 @@ public class MonkMonster {
         }
 
         public int hashCode() {
-            StringBuilder stringBuilder = new StringBuilder();
-            Arrays.stream(current).forEach(i -> stringBuilder.append(i));
-            return stringBuilder.append(side).toString().hashCode();
+            return Arrays.deepHashCode(current)+side.hashCode();
         }
 
         public boolean equals(Object o) {
             Status another = (Status) o;
-            for (int i = 0; i < current.length; i++) {
-                if (current[i] != another.current[i]) {
-                    return false;
-                }
-            }
-            return side == another.side;
+            return Arrays.deepEquals(current,another.current)&&side==another.side;
         }
 
         private boolean isEnd() {
