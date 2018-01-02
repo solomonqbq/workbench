@@ -102,7 +102,7 @@ public class MonkMonster {
             } else {
                 index = 2;
             }
-            for (int n = 0; n <= number; n++) {
+            for (int n = 0; n <= number; n++) {//number固定下，人和妖怪数目的排列组合
                 if (n <= current[index] && (number - n) <= current[index+1]) {
                     Status newStatus = copy();
                     newStatus.changeSide();
